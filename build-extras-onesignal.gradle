@@ -14,17 +14,17 @@ repositories {
 
 def versionGroupAligns = [
     // ### Google Play Services library
-    'com.google.android.gms': [
-        'version': '11.8.+',
-        'omitModules': ['strict-version-matcher-plugin']
-    ],
+    //'com.google.android.gms': [
+    //    'version': '11.8.+',
+    //    'omitModules': ['strict-version-matcher-plugin']
+    //],
 
     // ### Google Firebase library
     // Although not used by OneSignal Firebase has some dependencies on gms
     // If present, ensuring they are aligned
-    'com.google.firebase': [
-        'version': '11.8.+'
-    ],
+    //'com.google.firebase': [
+    //    'version': '11.8.+'
+    //],
 
     // ### Android Support Library
     'com.android.support': [
@@ -66,5 +66,11 @@ configurations.all { resolutionStrategy {
 }}
 
 dependencies {
-    implementation 'com.github.OutSystems:OneSignal-Android-SDK:3.11.4-OS'
+    implementation 'com.github.Outsystems:OneSignal-Android-SDK:82ba9b8'
+    implementation 'com.google.android.gms:play-services-location:15.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:15.0.0'
+    implementation 'com.google.android.gms:play-services-base:15.0.0'
+    implementation 'com.google.android.gms:play-services-basement:15.0.0'
+    implementation 'com.google.android.gms:play-services-tasks:15.0.0'
+    implementation 'com.google.android.gms:play-services-stats:15.0.0'
 }
