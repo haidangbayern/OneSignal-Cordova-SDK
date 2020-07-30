@@ -6,16 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+
+## [2.11.0-OS]
+### Changes
+- Merge upstream (2.11.0) into OutSystems branch
+- Change OneSignal-Android-SDK to point to newer version 3.15.0-OS [RMET-12](https://outsystemsrd.atlassian.net/browse/RMET-12)
+
 ## [2.6.0-OS2] - 2019-12-04
 ### Additions
 - Add plugin action to remove SubscriptionObserver [RNMT-3623](https://outsystemsrd.atlassian.net/browse/RNMT-3623)
-
 
 ## [2.6.0-OS1] - 2019-10-10
 ### Fixes
 - Change OneSignal-Android-SDK to point to newer version 3.11.4-OS [RNMT-3314](https://outsystemsrd.atlassian.net/browse/RNMT-3314)
 - Change android support versions dependency to fallback to version 26.1.+ when compileSDK is inferior to 28 [RNMT-3266](https://outsystemsrd.atlassian.net/browse/RNMT-3266)
-
 
 ## [2.6.0-OS] 
 ### Changes
