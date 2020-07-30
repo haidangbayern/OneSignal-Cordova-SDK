@@ -1,5 +1,5 @@
 {
-  "version": "2.11.0-0S",
+  "version": "2.11.0-OS",
 
   "name": "onesignal-cordova-plugin",
   "cordova_name": "OneSignal Push Notifications",
