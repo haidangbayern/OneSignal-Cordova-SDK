@@ -67,10 +67,10 @@ configurations.all { resolutionStrategy {
 
 dependencies {
     implementation 'com.github.Outsystems:OneSignal-Android-SDK:fix~android-dependency-SNAPSHOT'
-    implementation 'com.google.android.gms:play-services-location:15.0.0'
-    implementation 'com.google.android.gms:play-services-ads-identifier:15.0.0'
-    implementation 'com.google.android.gms:play-services-base:15.0.0'
-    implementation 'com.google.android.gms:play-services-basement:15.0.0'
-    implementation 'com.google.android.gms:play-services-tasks:15.0.0'
-    implementation 'com.google.android.gms:play-services-stats:15.0.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
+    implementation 'com.google.android.gms:play-services-base:16.0.0'
+    implementation 'com.google.android.gms:play-services-basement:16.0.0'
+    implementation 'com.google.android.gms:play-services-tasks:16.0.0'
+    implementation 'com.google.android.gms:play-services-stats:16.0.0'
 }
