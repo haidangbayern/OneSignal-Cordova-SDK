@@ -66,6 +66,7 @@ configurations.all { resolutionStrategy {
 }}
 
 dependencies {
+    implementation 'com.github.Outsystems:OneSignal-Android-SDK:5.0.0'
     implementation 'com.google.android.gms:play-services-location:15.0.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:15.0.0'
     implementation 'com.google.android.gms:play-services-base:15.0.0'
