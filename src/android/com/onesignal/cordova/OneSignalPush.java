@@ -27,9 +27,6 @@
 
 package com.onesignal.cordova;
 
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.onesignal.OSInAppMessageAction;
@@ -39,9 +36,7 @@ import com.onesignal.OSNotificationReceivedEvent;
 import com.onesignal.OneSignal;
 
 import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -199,13 +194,13 @@ public class OneSignalPush extends CordovaPlugin {
         result = OneSignalController.getTags(callbackContext);
         break;
 
-        case INIT:
-          result = init(callbackContext, data);
-          break;
+      case SEND_TAGS:
+        result = OneSignalController.sendTags(data);
+        break;
 
-        case SET_IN_FOCUS_DISPLAYING:
-          result = OneSignalController.setInFocusDisplaying(data);
-          break;
+      case DELETE_TAGS:
+        result = OneSignalController.deleteTags(data);
+        break;
 
       case REGISTER_FOR_PROVISIONAL_AUTHORIZATION:
         result = OneSignalController.registerForProvisionalAuthorization();
@@ -243,13 +238,13 @@ public class OneSignalPush extends CordovaPlugin {
         OneSignalController.setLogLevel(data);
         break;
 
-        case REMOVE_TRIGGERS_FOR_KEYS:
-          result = OneSignalInAppMessagingController.removeTriggersForKeys(data);
-          break;
+      case SET_EMAIL:
+        result = OneSignalEmailController.setEmail(callbackContext, data);
+        break;
 
-        case GET_TRIGGER_VALUE_FOR_KEY:
-          result = OneSignalInAppMessagingController.getTriggerValueForKey(callbackContext, data);
-          break;
+      case SET_UNAUTHENTICATED_EMAIL:
+        result = OneSignalEmailController.setUnauthenticatedEmail(callbackContext, data);
+        break;
 
       case LOGOUT_EMAIL:
         result = OneSignalEmailController.logoutEmail(callbackContext);
@@ -335,9 +330,9 @@ public class OneSignalPush extends CordovaPlugin {
         result = OneSignalOutcomeController.sendOutcomeWithValue(callbackContext, data);
         break;
 
-    } catch(Throwable t) {
-      result =false;
-      t.printStackTrace();
+      default:
+        Log.e(TAG, "Invalid action : " + action);
+        CallbackHelper.callbackError(callbackContext, "Invalid action : " + action);
     }
 
     return result;
