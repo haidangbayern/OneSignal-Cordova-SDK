@@ -71,12 +71,7 @@
       <string>production</string>
     </config-file>
 
-    <podspec>
-        <pods use-frameworks="true">
-            <pod name="OneSignalXCFramework" spec="3.6.1" />
-        </pods>
-    </podspec>
-
+    <framework src="OneSignalXCFramework" type="podspec" spec="3.6.1" />
     <header-file src="src/ios/OneSignalPush.h" />
     <source-file src="src/ios/OneSignalPush.m" />
 
