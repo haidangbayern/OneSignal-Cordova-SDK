@@ -73,12 +73,8 @@
     </config-file>
 
     <podspec>
-        <config>
-            <source url="https://github.com/CocoaPods/Specs.git"/>
-            <source url="https://github.com/OneSignal/OneSignal-iOS-SDK.git"/>
-        </config>
         <pods use-frameworks="true">
-            <pod name="OneSignalXCFramework" spec="3.6.0" />
+            <pod name="OneSignalXCFramework" spec="3.6.1" />
         </pods>
     </podspec>
 
