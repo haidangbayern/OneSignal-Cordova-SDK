@@ -47,6 +47,20 @@ OneSignalPlugin.prototype.OSNotificationPermission = {
     Denied: 2
 };
 
+OneSignal.prototype.OSInFocusDisplayOption = {
+    None: 0,
+    InAppAlert : 1,
+    Notification : 2
+};
+
+OneSignal._displayOption = OneSignal.prototype.OSInFocusDisplayOption.Notification;
+
+OneSignal.prototype.inFocusDisplaying = function(display) {
+    OneSignal._displayOption = display;
+    console.log("called inFocusDisplaying");
+    return this;
+};
+
 OneSignalPlugin._permissionObserverList = [];
 OneSignalPlugin._subscriptionObserverList = [];
 OneSignalPlugin._emailSubscriptionObserverList = [];
@@ -67,6 +81,8 @@ OneSignalPlugin.prototype.setNotificationWillShowInForegroundHandler = function(
         OneSignalPlugin._notificationWillShowInForegroundDelegate(OSNotificationReceivedEvent.create(notificationReceived));
     };
 
+    //talvez possa-se implementar aqui o controle das notificações
+    console.log("agora que passou aqui!!");
     window.cordova.exec(foregroundParsingHandler, function(){}, "OneSignalPush", "setNotificationWillShowInForegroundHandler", []);
 };
 
