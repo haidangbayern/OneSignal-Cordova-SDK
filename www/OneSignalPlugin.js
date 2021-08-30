@@ -79,24 +79,20 @@ OneSignalPlugin.prototype.setNotificationWillShowInForegroundHandler = function(
     var foregroundParsingHandler = function(notificationReceived) {
         console.log("foregroundParsingHandler " + JSON.stringify(notificationReceived));
 
-        switch (OneSignalPlugin._displayOption) {
-            case 0:
-                console.log("None 1");
-                console.log("None 2");
-                break;
-            case 1:
-                console.log("InAppAlert 1");
-                console.log("InAppAlert 2");
-                break;
-            case 2:
-                console.log("Notification 1");
-                console.log("Notification 2");
-                break;
-        }
-        
-        //window.cordova.exec(function(){}, function(){}, "OneSignalPush", "completeNotification", [notificationReceived.notification.notificationId, false]);
-
         OneSignalPlugin._notificationWillShowInForegroundDelegate(OSNotificationReceivedEvent.create(notificationReceived));
+
+        switch (OneSignalPlugin._displayOption) {
+            case 0: //None
+                notificationReceived.complete(null);
+                break;
+            case 1: //InAppAlert
+                notificationReceived.complete(null);
+                alert(notificationReceived.notification.body);
+                break;
+            case 2: //Notification
+                notificationReceived.complete(notificationReceived.notification);
+                break;
+
     };
 
     window.cordova.exec(foregroundParsingHandler, function(){}, "OneSignalPush", "setNotificationWillShowInForegroundHandler", []);
@@ -128,37 +124,6 @@ OneSignalPlugin._processFunctionList = function(array, param) {
 };
 
 OneSignalPlugin.prototype.completeNotification = function(notification, shouldDisplay) {
-
-    if (!notification) {
-
-    }
-
-    switch (OneSignalPlugin._displayOption) {
-        case 0: //None
-            window.cordova.exec(function(){},
-                                function(){},
-                                "OneSignalPush",
-                                "completeNotification",
-                                [notificationReceived.notification.notificationId, false]);
-            break;
-        case 1: //InAppAlert
-            window.cordova.exec(function(){},
-                                function(){},
-                                "OneSignalPush",
-                                "completeNotification",
-                                [notificationReceived.notification.notificationId, false]);
-            alert(notificationReceived.notification.body);
-            break;
-        case 2: //Notification
-            window.cordova.exec(function(){},
-                                function(){},
-                                "OneSignalPush",
-                                "completeNotification",
-                                [notificationReceived.notification.notificationId, true]);
-            break;
-    }
-    
-
     window.cordova.exec(function(){}, function(){}, "OneSignalPush", "completeNotification", [notification.notificationId, shouldDisplay]);
 };
 
