@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="onesignal-cordova-plugin"
-    version="2.11.1-OS">
+    version="2.11.1-OS1">
 
   <name>OneSignal Push Notifications</name>
   <author>Josh Kasten, Bradley Hesse, Rodrigo Gomez-Palacio</author>
@@ -42,10 +42,11 @@
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <amazon:enable-feature android:name="com.amazon.device.messaging" android:required="false" xmlns:amazon="http://schemas.amazon.com/apk/res/android" />
-      <service android:name="com.onesignal.ADMMessageHandler" android:exported="false" />
+      <service android:name="com.onesignal.ADMMessageHandler" android:exported="true" />
       <receiver
         android:name="com.onesignal.ADMMessageHandler$Receiver"
-        android:permission="com.amazon.device.messaging.permission.SEND" >
+        android:permission="com.amazon.device.messaging.permission.SEND" 
+        android:exported="true">
         <intent-filter>
           <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
           <action android:name="com.amazon.device.messaging.intent.RECEIVE" />

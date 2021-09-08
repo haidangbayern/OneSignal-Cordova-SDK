@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.11.0-OS]
 ### Changes
+- Update android library to work with android 12 [RMET-824] (https://outsystemsrd.atlassian.net/browse/RMET-824) 
+
+## [2.11.0-OS]
+### Changes
 - Merge upstream (2.11.0) into OutSystems branch
 - Change OneSignal-Android-SDK to point to newer version 3.15.0-OS [RMET-12](https://outsystemsrd.atlassian.net/browse/RMET-12)
 
