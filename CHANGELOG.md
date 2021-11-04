@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.0-OS2]
+### Changes
+- New plugin release to include metadata tag for MABS 7.2.0 compatibility
 
 ## [2.11.0-OS]
 ### Changes
