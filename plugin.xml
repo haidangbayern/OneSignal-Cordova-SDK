@@ -71,7 +71,7 @@
     <config-file target="*-Release.plist" parent="aps-environment">
       <string>production</string>
     </config-file>
-
+    <hook type="before_plugin_install" src="hooks/readPod.js" />
     <podspec>
         <config>
             <source url="https://github.com/CocoaPods/Specs.git"/>
